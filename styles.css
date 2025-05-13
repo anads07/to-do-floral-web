@@ -1,0 +1,232 @@
+* {
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Bree Serif', serif;
+}
+
+body {
+    background-image: url('img/fundo.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #963e17;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 10px;
+}
+
+h1 {
+    text-align: center;
+    text-transform: uppercase;
+    color: #6d9a8b;
+    margin: 0 0 15px 0;
+    font-size: 70px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    font-family: 'EB Garamond', serif;
+    font-weight: bold;
+}
+
+.top-controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.control-group {
+    display: flex;
+}
+
+.input-container, .filter-container {
+    display: flex;
+    position: relative;
+}
+
+input, button {
+    padding: 10px 15px;
+    border: 3px solid #005652;
+    border-radius: 20px;
+    font-size: 16px; 
+    background-color: rgba(255, 255, 255, 0.3);
+    color: #963e17;
+}
+
+input::placeholder {
+    color:  #963e17;
+    opacity: 1;
+  }
+
+#new-task {
+    width: 220px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-right: none;
+}
+
+#add-task {
+    width: 50px;
+    background-color: #6d9a8b;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 19px; 
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.filter-container input {
+    width: 180px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-right: none;
+    background-color: rgba(255, 255, 255, 0.3);
+    cursor: default;
+}
+
+#filter-btn {
+    width: 50px;
+    background-color: #6d9a8b;
+    color: white;
+    cursor: pointer;
+    font-size: 16px; 
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.filter-options {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #6d9a8b;
+    border-radius: 0 0 5px 5px;
+    z-index: 1;
+    margin-top: -2px;
+}
+
+.filter-options button {
+    display: block;
+    width: 100%;
+    background-color: transparent;
+    color: white;
+    text-align: center;
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid #005652;
+    padding: 10px 0;
+}
+
+.filter-options button:last-child {
+    border-bottom: none;
+    border-radius: 0 0 5px 5px;
+}
+
+.search-container {
+    position: relative;
+    width: 100%;
+    max-width: 470px;
+    margin-bottom: 20px;
+}
+
+#search-task {
+    width: 100%;
+    padding-left: 40px; /* espaço pro ícone */
+}
+
+.search-container::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 18px;
+    transform: translateY(-50%);
+    width: 22px;
+    height: 22px;
+    background-image: url('img/lupa.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    pointer-events: none;
+}
+
+.tasks-container {
+    background-color: rgba(226, 219, 199, 0.933);
+    border-radius: 10px;
+    max-height: 55vh;
+    overflow-y: auto;
+    width: 800px; 
+    max-width: 95%;
+    padding: 1px 10px 10px 10px;
+    margin-bottom: 30px;
+  }
+  
+
+#tasks-list {
+    list-style: none;
+}
+
+.task-item {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    border-bottom: 1px solid #cd8665;
+}
+
+.task-text {
+    flex: 1;
+    margin-left: 15px;
+    font-size: 17px; 
+}
+
+.completed .task-text {
+    text-decoration: line-through;
+    opacity: 0.7;
+}
+
+.check-btn {
+    width: 22px;
+    height: 22px;
+    border: 2px solid #963e17;
+    border-radius: 50%;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.completed .check-btn {
+    background-color: #6d9a8b;
+    border-color: #6d9a8b;
+}
+
+.delete-btn {
+    margin-left: 15px;
+    background-color: transparent;
+    border: none;
+    color: #963e17;
+    cursor: pointer;
+    font-size: 19px; 
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 3rem;
+        margin: 5px 0 15px; 
+    }
+    
+    .controls-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    
+    #new-task, #search-task {
+        width: 100%;
+        max-width: 250px;
+    }
+    
+    .tasks-container {
+        width: 95%;
+    }
+}

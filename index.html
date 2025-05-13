@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TO DO List</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>TO DO</h1>
+    
+    <div class="top-controls">
+        <div class="control-group">
+            <div class="input-container">
+                <input type="text" id="new-task" placeholder="Adicionar nova tarefa">
+                <button id="add-task">+</button>
+            </div>
+        </div>
+        
+        <div class="control-group">
+            <div class="filter-container">
+                <input type="text" placeholder="Filtrar tarefas" readonly>
+                <button id="filter-btn">▼</button>
+                <div class="filter-options">
+                    <button data-filter="all">Todas</button>
+                    <button data-filter="completed">Concluídas</button>
+                    <button data-filter="pending">A fazer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="search-container">
+        <input type="text" id="search-task" placeholder="Busque por uma tarefa...">
+    </div>
+    
+    <div class="tasks-container">
+        <ul id="tasks-list">
+            <!-- Tarefas serão adicionadas aqui via JavaScript -->
+        </ul>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
