@@ -134,7 +134,7 @@ input::placeholder {
 
 #search-task {
     width: 100%;
-    padding-left: 40px; /* espaço pro ícone */
+    padding-left: 40px; 
 }
 
 .search-container::before {

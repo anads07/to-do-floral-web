@@ -8,29 +8,24 @@ document.addEventListener('DOMContentLoaded', function() {
     
     let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
     let currentFilter = 'all';
-    
-    // Carrega tarefas ao iniciar
+  
     renderTasks();
-    
-    // Adicionar tarefa
+
     addTaskBtn.addEventListener('click', addTask);
     taskInput.addEventListener('keypress', function(e) {
         if (e.key === 'Enter') addTask();
     });
     
-    // Mostrar/ocultar opções de filtro
     filterBtn.addEventListener('click', function() {
         filterOptions.style.display = filterOptions.style.display === 'block' ? 'none' : 'block';
     });
     
-    // Fechar filtros ao clicar fora
     document.addEventListener('click', function(e) {
         if (!filterBtn.contains(e.target) && !filterOptions.contains(e.target)) {
             filterOptions.style.display = 'none';
         }
     });
-    
-    // Aplicar filtro
+
     document.querySelectorAll('.filter-options button').forEach(btn => {
         btn.addEventListener('click', function() {
             currentFilter = this.getAttribute('data-filter');
@@ -38,8 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
             renderTasks();
         });
     });
-    
-    // Buscar tarefas
+
     searchInput.addEventListener('input', function() {
         renderTasks();
     });
@@ -90,8 +84,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             tasksList.appendChild(taskItem);
         });
-        
-        // Adiciona eventos aos botões
+       
         document.querySelectorAll('.check-btn').forEach(btn => {
             btn.addEventListener('click', toggleTask);
         });
